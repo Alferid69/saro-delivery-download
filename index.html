@@ -1,165 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Download Saro Delivery</title>
     <style>
-        :root {
-            --primary-color: #FF5722; /* Your App's Brand Color */
-            --text-color: #333;
-            --bg-color: #f4f4f9;
+      :root {
+        --primary-color: #ff5722; /* Your App's Brand Color */
+        --text-color: #333;
+        --bg-color: #f4f4f9;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: var(--text-color);
+        text-align: center;
+      }
+      .container {
+        background: white;
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 90%;
+      }
+      .logo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 1rem;
+        border-radius: 15px;
+        /* Replace with your logo URL or just leave this placeholder */
+        background-color: #eee;
+        object-fit: cover;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+      }
+      p {
+        margin-bottom: 2rem;
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      .btn-main {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        transition: transform 0.2s;
+        margin-bottom: 1rem;
+      }
+      .btn-main:active {
+        transform: scale(0.98);
+      }
+
+      .loader {
+        border: 3px solid #f3f3f3;
+        border-top: 3px solid var(--primary-color);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .details {
+        font-size: 0.8rem;
+        color: #888;
+        margin-top: 1.5rem;
+      }
+      .links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 0.5rem;
+      }
+      .links a {
+        color: var(--primary-color);
+        font-size: 0.85rem;
+        text-decoration: none;
+        border-bottom: 1px dotted var(--primary-color);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: var(--text-color);
-            text-align: center;
+        100% {
+          transform: rotate(360deg);
         }
-        .container {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 90%;
-        }
-        .logo {
-            width: 100px;
-            height: 100px;
-            margin-bottom: 1rem;
-            border-radius: 15px;
-            /* Replace with your logo URL or just leave this placeholder */
-            background-color: #eee; 
-            object-fit: cover;
-        }
-        h1 { margin-bottom: 0.5rem; font-size: 1.5rem; }
-        p { margin-bottom: 2rem; color: #666; font-size: 0.95rem; }
-        
-        .btn-main {
-            display: block;
-            width: 100%;
-            padding: 15px 0;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s;
-            margin-bottom: 1rem;
-        }
-        .btn-main:active { transform: scale(0.98); }
-        
-        .loader {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid var(--primary-color);
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            animation: spin 1s linear infinite;
-            display: inline-block;
-            margin-right: 10px;
-        }
-        
-        .details { font-size: 0.8rem; color: #888; margin-top: 1.5rem; }
-        .links { display: flex; justify-content: center; gap: 15px; margin-top: 0.5rem; }
-        .links a { color: var(--primary-color); font-size: 0.85rem; text-decoration: none; border-bottom: 1px dotted var(--primary-color); }
-        
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <div class="container">
+      <img src="assets/saro_logo.webp" alt="App Logo" class="logo" />
 
-<div class="container">
-    <img src="assets/saro_logo.webp" alt="App Logo" class="logo">
-    
-    <h1>Saro Delivery</h1>
-    <p>Get the food you love, delivered fast.</p>
+      <h1>Saro Delivery</h1>
+      <p>Get the food you love, delivered fast.</p>
 
-    <button id="downloadBtn" class="btn-main" onclick="detectAndDownload()">
+      <button id="downloadBtn" class="btn-main" onclick="detectAndDownload()">
         Download for Android
-    </button>
-    
-    <div id="status" style="display:none; margin-bottom:1rem; font-size:0.9rem; color:#666;">
-        <div class="loader"></div> Analyzing phone...
-    </div>
+      </button>
 
-    <div class="details">
+      <div
+        id="status"
+        style="
+          display: none;
+          margin-bottom: 1rem;
+          font-size: 0.9rem;
+          color: #666;
+        "
+      >
+        <div class="loader"></div>
+        Analyzing phone...
+      </div>
+
+      <div class="details">
         Having trouble? Download manually:
         <div class="links">
-            <a href="https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-arm64-v8a-release.apk">New Phones (64-bit)</a>
-            <a href="https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-armeabi-v7a-release.apk">Old Phones (32-bit)</a>
+          <a
+            href="https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-arm64-v8a-release.apk"
+            >New Phones (64-bit)</a
+          >
+          <a
+            href="https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-armeabi-v7a-release.apk"
+            >Old Phones (32-bit)</a
+          >
         </div>
+      </div>
     </div>
-</div>
 
-<script>
-    // ==========================================
-    // 2. CONFIGURATION: PASTE YOUR LINKS HERE
-    // ==========================================
-    const LINK_ARM64 = "https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-arm64-v8a-release.apk"; // e.g. https://.../app-arm64-v8a-release.apk
-    const LINK_ARM32 = "https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-armeabi-v7a-release.apk"; // e.g. https://.../app-armeabi-v7a-release.apk
+    <script>
+      const LINK_ARM64 =
+        "https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-arm64-v8a-release.apk";
+      const LINK_ARM32 =
+        "https://github.com/Alferid69/saro-delivery-download/releases/download/v1.0.0/app-armeabi-v7a-release.apk";
 
-    // ==========================================
-    // 3. LOGIC: THE "SMART" DETECTION
-    // ==========================================
-    async function detectAndDownload() {
-        const btn = document.getElementById('downloadBtn');
-        const status = document.getElementById('status');
-        
-        // Show loading state
-        btn.style.display = 'none';
-        status.style.display = 'block';
+      async function detectAndDownload() {
+        const btn = document.getElementById("downloadBtn");
+        const status = document.getElementById("status");
 
-        let is64Bit = false;
+        btn.style.display = "none";
+        status.style.display = "block";
+
+        // ✅ Modern default
+        let is64Bit = true;
 
         try {
-            // METHOD A: Modern API (Chrome 90+, Android 10+)
-            if (navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
-                console.log("Using modern Client Hints API...");
-                const ua = await navigator.userAgentData.getHighEntropyValues(['architecture', 'bitness']);
-                
-                // If architecture is 'arm' and bitness is '64', it's a modern phone
-                if (ua.architecture === "arm" && ua.bitness === "64") {
-                    is64Bit = true;
-                }
-            } 
-            // METHOD B: Old School Regex (Fallback for older phones)
-            else {
-                console.log("Using User-Agent Regex...");
-                const agent = navigator.userAgent.toLowerCase();
-                if (agent.includes('arm64') || agent.includes('aarch64') || agent.includes('armv8')) {
-                    is64Bit = true;
-                }
+          // ---- METHOD A: Client Hints (best signal)
+          if (navigator.userAgentData?.getHighEntropyValues) {
+            const ua = await navigator.userAgentData.getHighEntropyValues([
+              "architecture",
+              "bitness",
+            ]);
+
+            if (ua.bitness === "32" && !ua.architecture?.includes("64")) {
+              is64Bit = false;
             }
+          }
+
+          // ---- METHOD B: Android version heuristic
+          const androidMatch = navigator.userAgent.match(/android\s(\d+)/i);
+          if (androidMatch) {
+            const version = parseInt(androidMatch[1], 10);
+            if (version < 10) {
+              is64Bit = false;
+            }
+          }
+
+          // ---- METHOD C: UA regex fallback
+          const agent = navigator.userAgent.toLowerCase();
+          if (
+            agent.includes("armv7") ||
+            agent.includes("armeabi") ||
+            agent.includes("armv7l")
+          ) {
+            is64Bit = false;
+          }
         } catch (e) {
-            console.log("Detection failed, defaulting to 32-bit (Safe Mode)");
+          // keep ARM64 default
+          console.warn("Detection failed, using ARM64 default");
         }
 
-        // Redirect based on result
-        if (is64Bit) {
-            status.innerHTML = "Downloading Optimized Version (17 MB)...";
-            setTimeout(() => { window.location.href = LINK_ARM64; }, 800);
-        } else {
-            status.innerHTML = "Downloading Standard Version (15 MB)...";
-            setTimeout(() => { window.location.href = LINK_ARM32; }, 800);
-        }
-        
-        // Reset button after 3 seconds (in case they need to click again)
+        status.innerHTML = is64Bit
+          ? "Detected modern Android. Downloading 64-bit version…"
+          : "Detected older Android. Downloading 32-bit version…";
+
         setTimeout(() => {
-            status.style.display = 'none';
-            btn.style.display = 'block';
-        }, 4000);
-    }
-</script>
+          window.location.href = is64Bit ? LINK_ARM64 : LINK_ARM32;
+        }, 700);
 
-</body>
+        setTimeout(() => {
+          status.style.display = "none";
+          btn.style.display = "block";
+        }, 4000);
+      }
+    </script>
+  </body>
 </html>
